@@ -10,5 +10,11 @@
   <%= @appellation.active %>
 </p>
 
+<p>
+  <strong>Logo:</strong>
+  <%= image_tag("appellation.logo") %>
+  <%= @appellation.logo %>
+</p>
+
 <%= link_to 'Edit', edit_appellation_path(@appellation) %> |
 <%= link_to 'Back', appellations_path %>

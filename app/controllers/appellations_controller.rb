@@ -69,6 +69,6 @@ class AppellationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appellation_params
-      params.require(:appellation).permit(:name, :active)
+      params.require(:appellation).permit(:name, :active, :logo)
     end
 end
