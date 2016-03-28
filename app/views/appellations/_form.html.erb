@@ -1,10 +1,10 @@
-<%= form_for(@type) do |f| %>
-  <% if @type.errors.any? %>
+<%= form_for(@appellation) do |f| %>
+  <% if @appellation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@type.errors.count, "error") %> prohibited this type from being saved:</h2>
+      <h2><%= pluralize(@appellation.errors.count, "error") %> prohibited this appellation from being saved:</h2>
 
       <ul>
-      <% @type.errors.full_messages.each do |message| %>
+      <% @appellation.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

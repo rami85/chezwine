@@ -11,13 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328144236) do
+ActiveRecord::Schema.define(version: 20160328170114) do
+
+  create_table "appellations", force: true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "logo"
+  end
 
   create_table "types", force: true do |t|
-    t.text     "name"
+    t.string   "name"
     t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "wines", force: true do |t|
+    t.string   "name"
+    t.integer  "type_id"
+    t.integer  "appellation_id"
+    t.decimal  "bottle_price"
+    t.decimal  "glass_price"
+    t.text     "color"
+    t.text     "nose"
+    t.text     "mouth"
+    t.string   "logo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wines", ["appellation_id"], name: "index_wines_on_appellation_id"
+  add_index "wines", ["type_id"], name: "index_wines_on_type_id"
 
 end
