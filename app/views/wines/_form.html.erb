@@ -15,11 +15,29 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+    <%= f.label :age_id %><br>
+    <%= f.select :age_id, 
+      options_from_collection_for_select(Age.all, :id, :name, @wine.age_id) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :harvest %><br>
+    <%= f.text_field :harvest %>
+  </div>
+
   <div class="field">
     <%= f.label :type_id %><br>
     <%= f.select :type_id, 
       options_from_collection_for_select(Type.all, :id, :name, @wine.type_id) %>
   </div>
+
+  <div class="field">
+    <%= f.label :grape_type_ids, 'Grapes types' %><br>
+    <%= f.collection_select :grape_type_ids, GrapeType.all, :id, :name, {}, { multiple: true } %>
+  </div>
+
   <div class="field">
     <%= f.label :appellation_id %><br>
     <%= f.select :appellation_id, 

@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328170114) do
+ActiveRecord::Schema.define(version: 20160329125441) do
+
+  create_table "ages", force: true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "appellations", force: true do |t|
     t.string   "name"
@@ -21,6 +28,13 @@ ActiveRecord::Schema.define(version: 20160328170114) do
     t.string   "logo"
   end
 
+  create_table "grape_types", force: true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "types", force: true do |t|
     t.string   "name"
     t.boolean  "active"
@@ -28,18 +42,37 @@ ActiveRecord::Schema.define(version: 20160328170114) do
     t.datetime "updated_at"
   end
 
+  create_table "wine_ages", force: true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "wine_grapes", force: true do |t|
+    t.integer  "wine_id"
+    t.integer  "grape_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wine_grapes", ["grape_type_id"], name: "index_wine_grapes_on_grape_type_id"
+  add_index "wine_grapes", ["wine_id"], name: "index_wine_grapes_on_wine_id"
+
   create_table "wines", force: true do |t|
     t.string   "name"
     t.integer  "type_id"
     t.integer  "appellation_id"
-    t.decimal  "bottle_price"
-    t.decimal  "glass_price"
+    t.decimal  "bottle_price",   precision: 10, scale: 2
+    t.decimal  "glass_price",    precision: 10, scale: 2
     t.text     "color"
     t.text     "nose"
     t.text     "mouth"
     t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "age_id"
+    t.integer  "harvest"
   end
 
   add_index "wines", ["appellation_id"], name: "index_wines_on_appellation_id"

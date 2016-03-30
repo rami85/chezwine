@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :ages
+
+  resources :grape_types
+
   resources :wines
 
   resources :appellations

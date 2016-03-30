@@ -1,0 +1,2 @@
+module GrapeTypesHelper
+end

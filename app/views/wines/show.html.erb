@@ -6,13 +6,32 @@
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @wine.type %>
+  <strong>Harvest:</strong>
+  <%= @wine.harvest %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @wine.age.name %>
 </p>
 
 <p>
   <strong>Appellation:</strong>
-  <%= @wine.appellation %>
+  <%= @wine.appellation.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @wine.type.name %>
+</p>
+
+<p>
+  <strong>Grape type:</strong>
+  <ul>
+    <% @wine.grape_types.each do |grape| %>
+      <li><%= grape.name %></li>
+    <% end %>
+  </ul>
 </p>
 
 <p>
