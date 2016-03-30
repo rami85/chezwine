@@ -5,6 +5,7 @@ json.array!(@wines) do |wine|
   json.type wine.type.name
   json.appellation wine.appellation.name
   json.grape_types wine.grape_types do |grape|
+  	json.id grape.id
     json.name grape.name
   end
   json.url wine_url(wine, format: :json)
