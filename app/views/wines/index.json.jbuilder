@@ -10,4 +10,5 @@ json.array!(@wines) do |wine|
   end
   json.age wine.age.name
   json.url wine_url(wine, format: :json)
+  json.appellation_logo wine.appellation.logo
 end
