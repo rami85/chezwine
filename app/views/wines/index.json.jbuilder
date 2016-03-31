@@ -1,5 +1,5 @@
 json.array!(@wines) do |wine|
-  json.extract! wine, :id, :name, :type_id, :appellation_id, :color, :nose, :mouth, :logo, :age_id
+  json.extract! wine, :id, :name, :type_id, :appellation_id, :color, :nose, :mouth, :logo, :age_id, :harvest
   json.bottle_price number_to_currency wine.bottle_price
   json.glass_price number_to_currency wine.glass_price
   json.type wine.type.name
