@@ -1,11 +1,12 @@
-<h1>Listing ages</h1>
+<h1>Listado vejez</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Active</th>
-      <th colspan="3"></th>
+      <th>Nombre</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -13,10 +14,9 @@
     <% @ages.each do |age| %>
       <tr>
         <td><%= age.name %></td>
-        <td><%= age.active %></td>
-        <td><%= link_to 'Show', age %></td>
-        <td><%= link_to 'Edit', edit_age_path(age) %></td>
-        <td><%= link_to 'Destroy', age, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', age %></td>
+        <td><%= link_to 'Editar', edit_age_path(age) %></td>
+        <td><%= link_to 'Eliminar', age, method: :delete, data: { confirm: 'Estás seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Age', new_age_path %>
+<%= link_to 'Nueva vejez', new_age_path %>

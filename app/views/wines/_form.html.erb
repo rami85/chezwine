@@ -12,62 +12,66 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label 'Nombre'%><br>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :age_id %><br>
+    <%= f.label 'Vejez' %><br>
     <%= f.select :age_id, 
       options_from_collection_for_select(Age.all, :id, :name, @wine.age_id) %>
   </div>
 
   <div class="field">
-    <%= f.label :harvest %><br>
+    <%= f.label 'Cosecha' %><br>
     <%= f.text_field :harvest %>
   </div>
 
   <div class="field">
-    <%= f.label :type_id %><br>
+    <%= f.label 'Tipo de vino' %><br>
     <%= f.select :type_id, 
       options_from_collection_for_select(Type.all, :id, :name, @wine.type_id) %>
   </div>
 
   <div class="field">
-    <%= f.label :grape_type_ids, 'Grapes types' %><br>
+    <%= f.label 'Tipo de uva' %><br>
     <%= f.collection_select :grape_type_ids, GrapeType.all, :id, :name, {}, { multiple: true } %>
   </div>
 
   <div class="field">
-    <%= f.label :appellation_id %><br>
+    <%= f.label 'Denominación' %><br>
     <%= f.select :appellation_id, 
       options_from_collection_for_select(Appellation.all, :id, :name, @wine.appellation_id) %>
   </div>
   <div class="field">
-    <%= f.label :bottle_price %><br>
-    <%= f.text_field :bottle_price %>
+    <%= f.label 'Precio botella 500ml' %><br>
+    <%= f.text_field :bottle_500_price %>
   </div>
   <div class="field">
-    <%= f.label :glass_price %><br>
+    <%= f.label 'Precio botella 750ml' %><br>
+    <%= f.text_field :bottle_750_price %>
+  </div>
+  <div class="field">
+    <%= f.label 'Precio vaso' %><br>
     <%= f.text_field :glass_price %>
   </div>
   <div class="field">
-    <%= f.label :color %><br>
-    <%= f.text_area :color %>
+    <%= f.label 'Color' %><br>
+    <%= f.text_area :color, cols: 40, rows: 10%>
   </div>
   <div class="field">
-    <%= f.label :nose %><br>
-    <%= f.text_area :nose %>
+    <%= f.label 'Nariz' %><br>
+    <%= f.text_area :nose, cols: 40, rows: 10 %>
   </div>
   <div class="field">
-    <%= f.label :mouth %><br>
-    <%= f.text_area :mouth %>
+    <%= f.label 'Boca' %><br>
+    <%= f.text_area :mouth, cols: 40, rows: 10 %>
   </div>
   <div class="field">
-    <%= f.label :logo %><br>
+    <%= f.label 'Imágen' %><br>
     <%= f.text_field :logo %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'GUARDAR' %>
   </div>
 <% end %>

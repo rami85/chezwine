@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329125441) do
+ActiveRecord::Schema.define(version: 20160430092422) do
 
   create_table "ages", force: true do |t|
     t.string   "name"
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20160329125441) do
     t.string   "name"
     t.integer  "type_id"
     t.integer  "appellation_id"
-    t.decimal  "bottle_price",   precision: 10, scale: 2
-    t.decimal  "glass_price",    precision: 10, scale: 2
+    t.decimal  "bottle_500_price", precision: 10, scale: 2
+    t.decimal  "glass_price",      precision: 10, scale: 2
     t.text     "color"
     t.text     "nose"
     t.text     "mouth"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160329125441) do
     t.datetime "updated_at"
     t.integer  "age_id"
     t.integer  "harvest"
+    t.decimal  "bottle_750_price", precision: 10, scale: 2
   end
 
   add_index "wines", ["appellation_id"], name: "index_wines_on_appellation_id"

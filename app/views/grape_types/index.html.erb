@@ -1,11 +1,12 @@
-<h1>Listing grape_types</h1>
+<h1>Listado de tipos de uva</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Active</th>
-      <th colspan="3"></th>
+      <th>Nombre</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -13,10 +14,9 @@
     <% @grape_types.each do |grape_type| %>
       <tr>
         <td><%= grape_type.name %></td>
-        <td><%= grape_type.active %></td>
-        <td><%= link_to 'Show', grape_type %></td>
-        <td><%= link_to 'Edit', edit_grape_type_path(grape_type) %></td>
-        <td><%= link_to 'Destroy', grape_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', grape_type %></td>
+        <td><%= link_to 'Editar', edit_grape_type_path(grape_type) %></td>
+        <td><%= link_to 'Eliminar', grape_type, method: :delete, data: { confirm: 'Estás seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Grape type', new_grape_type_path %>
+<%= link_to 'Nuevo tipo de uva', new_grape_type_path %>

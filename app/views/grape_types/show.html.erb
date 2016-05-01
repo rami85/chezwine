@@ -1,14 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @grape_type.name %>
 </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @grape_type.active %>
-</p>
-
-<%= link_to 'Edit', edit_grape_type_path(@grape_type) %> |
-<%= link_to 'Back', grape_types_path %>
+<%= link_to 'Editar', edit_grape_type_path(@grape_type) %> |
+<%= link_to 'Volver', grape_types_path %>

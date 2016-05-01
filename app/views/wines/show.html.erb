@@ -1,32 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @wine.name %>
 </p>
 
 <p>
-  <strong>Harvest:</strong>
+  <strong>Cosecha:</strong>
   <%= @wine.harvest %>
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong>Vejez:</strong>
   <%= @wine.age.name %>
 </p>
 
 <p>
-  <strong>Appellation:</strong>
+  <strong>Denominación:</strong>
   <%= @wine.appellation.name %>
 </p>
 
 <p>
-  <strong>Type:</strong>
+  <strong>Tipo:</strong>
   <%= @wine.type.name %>
 </p>
 
 <p>
-  <strong>Grape type:</strong>
+  <strong>Tipo uva:</strong>
   <ul>
     <% @wine.grape_types.each do |grape| %>
       <li><%= grape.name %></li>
@@ -35,12 +35,17 @@
 </p>
 
 <p>
-  <strong>Bottle price:</strong>
-  <%= @wine.bottle_price %>
+  <strong>Precio botella 500ml:</strong>
+  <%= @wine.bottle_500_price %>
 </p>
 
 <p>
-  <strong>Glass price:</strong>
+  <strong>Precio botella 500ml:</strong>
+  <%= @wine.bottle_750_price %>
+</p>
+
+<p>
+  <strong>Precio vaso:</strong>
   <%= @wine.glass_price %>
 </p>
 
@@ -50,19 +55,19 @@
 </p>
 
 <p>
-  <strong>Nose:</strong>
+  <strong>Nariz:</strong>
   <%= @wine.nose %>
 </p>
 
 <p>
-  <strong>Mouth:</strong>
+  <strong>Boca:</strong>
   <%= @wine.mouth %>
 </p>
 
 <p>
-  <strong>Logo:</strong>
+  <strong>Imágen:</strong>
   <%= @wine.logo %>
 </p>
 
-<%= link_to 'Edit', edit_wine_path(@wine) %> |
-<%= link_to 'Back', wines_path %>
+<%= link_to 'Editar', edit_wine_path(@wine) %> |
+<%= link_to 'Volver', wines_path %>
