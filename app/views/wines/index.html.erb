@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>NOMBRE</th>
+      <th>BODEGA</th>
       <th>TIPO</th>
       <th>DENOMINACÓN</th>
       <th>PRECIO BOTELLA 500ML</th>
@@ -19,6 +20,7 @@
     <% @wines.each do |wine| %>
       <tr>
         <td><%= wine.name %></td>
+        <td><%= wine.wine_cell %></td>
         <td><%= wine.type.name %></td>
         <td><%= wine.appellation.name %></td>
         <td><%= wine.bottle_500_price %></td>

@@ -4,7 +4,7 @@ class AgesController < ApplicationController
   # GET /ages
   # GET /ages.json
   def index
-    @ages = Age.all
+    @ages = Age.order(:name)
   end
 
   # GET /ages/1

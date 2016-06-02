@@ -4,7 +4,7 @@ class GrapeTypesController < ApplicationController
   # GET /grape_types
   # GET /grape_types.json
   def index
-    @grape_types = GrapeType.all
+    @grape_types = GrapeType.order(:name)
   end
 
   # GET /grape_types/1

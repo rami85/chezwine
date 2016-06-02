@@ -4,7 +4,7 @@ class AppellationsController < ApplicationController
   # GET /appellations
   # GET /appellations.json
   def index
-    @appellations = Appellation.all
+    @appellations = Appellation.order(:name)
   end
 
   # GET /appellations/1
