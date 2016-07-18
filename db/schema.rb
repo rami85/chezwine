@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602070324) do
+ActiveRecord::Schema.define(version: 20160718192745) do
 
   create_table "ages", force: true do |t|
     t.string   "name"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160602070324) do
     t.integer  "harvest"
     t.decimal  "bottle_750_price", precision: 10, scale: 2
     t.string   "wine_cell"
+    t.text     "elaboration"
   end
 
   add_index "wines", ["appellation_id"], name: "index_wines_on_appellation_id"

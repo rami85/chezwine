@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= f.label 'Elaboración' %><br>
+    <%= f.text_area :elaboration, cols: 40, rows: 10%>
+  </div>
+
+  <div class="field">
     <%= f.label 'Vejez' %><br>
     <%= f.select :age_id, 
       options_from_collection_for_select(Age.all, :id, :name, @wine.age_id) %>
