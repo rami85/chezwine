@@ -15,6 +15,7 @@ class WinesController < ApplicationController
   # GET /wines/new
   def new
     @wine = Wine.new
+    @wine.wine_grapes.build
   end
 
   # GET /wines/1/edit
@@ -69,7 +70,9 @@ class WinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wine_params
-      params.require(:wine).permit(:name, :wine_cell, :elaboration, :type_id, :appellation_id, :bottle_500_price, :bottle_750_price, 
-        :glass_price, :color, :nose, :mouth, :logo, :age_id, :harvest, grape_type_ids: [])
+      params.require(:wine).permit(:name, :wine_cell, :elaboration, :type_id, 
+        :appellation_id, :bottle_500_price, :bottle_750_price, 
+        :glass_price, :color, :nose, :mouth, :logo, :age_id, :harvest, 
+        :is_restaurant_wine, :is_restaurant_wine, wine_grapes_attributes:[:_destroy, :id, :wine_id, :grape_type_id, :percentage])
     end
 end

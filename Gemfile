@@ -33,6 +33,9 @@ end
 
 ### / OpenShift changes
 
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'nested_form_fields', '~> 0.7.8'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

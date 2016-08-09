@@ -38,8 +38,8 @@
 <p>
   <strong>Tipo uva:</strong>
   <ul>
-    <% @wine.grape_types.each do |grape| %>
-      <li><%= grape.name %></li>
+    <% @wine.wine_grapes.each do |wg| %>
+      <li><%= wg.grape_type.name %> - <%= wg.percentage %>%</li>
     <% end %>
   </ul>
 </p>

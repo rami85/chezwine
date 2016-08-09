@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718192745) do
+ActiveRecord::Schema.define(version: 20160803194340) do
 
   create_table "ages", force: true do |t|
     t.string   "name"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160718192745) do
     t.integer  "grape_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "percentage"
   end
 
   add_index "wine_grapes", ["grape_type_id"], name: "index_wine_grapes_on_grape_type_id"
@@ -63,8 +64,8 @@ ActiveRecord::Schema.define(version: 20160718192745) do
     t.string   "name"
     t.integer  "type_id"
     t.integer  "appellation_id"
-    t.decimal  "bottle_500_price", precision: 10, scale: 2
-    t.decimal  "glass_price",      precision: 10, scale: 2
+    t.decimal  "bottle_500_price",   precision: 10, scale: 2
+    t.decimal  "glass_price",        precision: 10, scale: 2
     t.text     "color"
     t.text     "nose"
     t.text     "mouth"
@@ -73,9 +74,11 @@ ActiveRecord::Schema.define(version: 20160718192745) do
     t.datetime "updated_at"
     t.integer  "age_id"
     t.integer  "harvest"
-    t.decimal  "bottle_750_price", precision: 10, scale: 2
+    t.decimal  "bottle_750_price",   precision: 10, scale: 2
     t.string   "wine_cell"
     t.text     "elaboration"
+    t.boolean  "is_special_wine"
+    t.boolean  "is_restaurant_wine"
   end
 
   add_index "wines", ["appellation_id"], name: "index_wines_on_appellation_id"
