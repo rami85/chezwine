@@ -33,6 +33,8 @@
           <th>Bodega</th>
           <th>Tipo</th>
           <th>Denominación</th>
+          <th>Vinoteca</th>
+          <th>Restaurante</th>
         </tr>
       </thead>
 
@@ -43,6 +45,20 @@
             <td><%= wine.wine_cell %></td>
             <td><%= wine.type.name %></td>
             <td><%= wine.appellation.name %></td>
+            <td class="text-center">
+              <% if wine.is_special_wine %>
+                <span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:lightGreen"></span>
+              <% else %>
+                <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:coral "></span>
+              <% end %>
+            </td>
+            <td class="text-center">
+              <% if wine.is_restaurant_wine %>
+                <span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:lightGreen"></span>
+              <% else %>
+                <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:coral "></span>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
