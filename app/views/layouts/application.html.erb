@@ -5,8 +5,16 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- BOOTSTRAP: Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- BOOTSTRAP: Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- DATATABLES bootstrap css -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+  <!-- DATATABLES js -->
+  <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+  <!-- DATATABLES bootstrap js -->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -15,7 +23,7 @@
       <%= link_to 'Rincón del Chez - Administración', root_path, class: 'navbar-brand' %>
     </div>
     <ul class="nav navbar-nav">
-      <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to 'Vinos', wines_path %></li>
+      <li class="<%= 'active' if current_page?(root_path) or current_page?(wines_path) %>"><%= link_to 'Vinos', wines_path %></li>
       <li class="<%= 'active' if current_page?(types_path) %>"><%= link_to 'Tipos', types_path %></li> 
       <li class="<%= 'active' if current_page?(appellations_path) %>"><%= link_to 'Denominaciones', appellations_path %></li>
       <li class="<%= 'active' if current_page?(grape_types_path) %>"><%= link_to 'Uvas', grape_types_path %></li>
@@ -23,10 +31,8 @@
     </ul>
   </div>
 </nav>
-<div class="container">
-	<%= yield %>
-</div>
 
+<%= yield %>
 
 </body>
 </html>

@@ -1,43 +1,50 @@
-<div class="row">
-  <h1>Listado de vinos</h1>
-</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#winesTable').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
+        }
+    } );
+} );  
+</script>
 
-<div class="row">
-  <div class="col-sm-12 col-md-8">
-    <%= link_to 'Añadir vino', new_wine_path, class: 'btn btn-primary pull-right' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <h1>Vinos</h1>
+    </div>
+
+    <div class="col-xs-4">
+      <div class="text-right" style="margin-top: 30px;">
+        <%= link_to 'Nuevo vino', new_wine_path, class: 'btn btn-primary'%>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-12 col-md-8">
-    <table class="table table-striped table-condensed">
+<hr/>
+
+<div class="container">
+    <table id="winesTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead>
         <tr>
-          <th>NOMBRE</th>
-          <th>BODEGA</th>
-          <th>TIPO</th>
-          <th>DENOMINACÓN</th>
-          <th></th>
+          <th>Nombre</th>
+          <th>Bodega</th>
+          <th>Tipo</th>
+          <th>Denominación</th>
         </tr>
       </thead>
 
       <tbody>
         <% @wines.each do |wine| %>
           <tr>
-            <td><%= wine.name %></td>
+            <td><%= link_to wine.name, edit_wine_path(wine) %></td>
             <td><%= wine.wine_cell %></td>
             <td><%= wine.type.name %></td>
             <td><%= wine.appellation.name %></td>
-            <td><%= link_to '', edit_wine_path(wine), class: 'glyphicon glyphicon-pencil' %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-12 col-md-8">
-    <%= link_to 'Añadir vino', new_wine_path, class: 'btn btn-primary pull-right' %>
-  </div>
 </div>

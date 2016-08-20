@@ -1,27 +1,43 @@
-<h1>Listado de tipos de vino</h1>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#typesTable').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
+        }
+    } );
+} );  
+</script>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @types.each do |type| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <h1>Tipos de vino</h1>
+    </div>
+
+    <div class="col-xs-4">
+      <div class="text-right" style="margin-top: 30px;">
+        <%= link_to 'Nuevo tipo', new_type_path, class: 'btn btn-primary'%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr/>
+
+<div class="container">
+  <table id="typesTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead>
       <tr>
-        <td><%= type.name %></td>
-        <td><%= link_to 'Ver', type %></td>
-        <td><%= link_to 'Editar', edit_type_path(type) %></td>
-        <td><%= link_to 'Eliminar', type, method: :delete, data: { confirm: 'Estás seguro?' } %></td>
+        <th>Nombre</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Nuevo tipo', new_type_path %>
+    </thead>
+    <tbody>
+      <% @types.each do |type| %>
+        <tr>
+          <td><%= link_to type.name, edit_type_path(type) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
