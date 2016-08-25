@@ -7,6 +7,12 @@ es:
         restrict_dependent_destroy:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
+    models:
+      grape_type: "Tipo de uva"
+    attributes:
+      wine_grape:
+        percentage: "Porcentaje"
+        grape_type_id: "Tipo de uva"
   date:
     abbr_day_names:
     - dom
