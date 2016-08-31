@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803194340) do
+ActiveRecord::Schema.define(version: 20160831152938) do
 
   create_table "ages", force: true do |t|
     t.string   "name"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160803194340) do
     t.text     "elaboration"
     t.boolean  "is_special_wine"
     t.boolean  "is_restaurant_wine"
+    t.boolean  "active",                                      default: true
   end
 
   add_index "wines", ["appellation_id"], name: "index_wines_on_appellation_id"

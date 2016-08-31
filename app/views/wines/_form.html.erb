@@ -19,6 +19,12 @@
     </div>
   <% end %>
 
+  <div class="checkbox">
+    <label>
+      <%= f.input :active, label:'Activo' %>
+    </label>
+  </div>
+
 
   <div class="form-group form-group-sm">
       <label>Nombre</label>
@@ -47,7 +53,7 @@
 
   <div class="form-group form-group-sm">
     <label>Elaboración</label>
-    <%= f.text_area :elaboration, rows: 2, class:'form-control'%>
+    <%= f.text_area :elaboration, rows: 6, class:'form-control'%>
   </div>
 
   <div class="form-group form-group-sm">
@@ -69,12 +75,6 @@
     <%= f.select :type_id, 
       options_from_collection_for_select(Type.all, :id, :name, @wine.type_id),
       class: 'form-control' %>
-  </div>
-
-
-  <div class="form-group form-group-sm">
-      <label>Bodega</label>
-      <%= f.text_field :wine_cell, class: 'form-control' %>
   </div>
 
 
@@ -119,17 +119,17 @@
 
   <div class="form-group form-group-sm">
     <label>Color</label>
-    <%= f.text_area :color, rows: 2, class:'form-control'%>
+    <%= f.text_area :color, rows: 6, class:'form-control'%>
   </div>
 
   <div class="form-group form-group-sm">
     <label>Nariz</label>
-    <%= f.text_area :nose, rows: 2, class:'form-control'%>
+    <%= f.text_area :nose, rows: 6, class:'form-control'%>
   </div>
 
   <div class="form-group form-group-sm">
     <label>Boca</label>
-    <%= f.text_area :mouth, rows: 2, class:'form-control'%>
+    <%= f.text_area :mouth, rows: 6, class:'form-control'%>
   </div>
 
   <div class="form-group form-group-sm">

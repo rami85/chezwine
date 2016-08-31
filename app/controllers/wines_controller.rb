@@ -73,6 +73,6 @@ class WinesController < ApplicationController
       params.require(:wine).permit(:name, :wine_cell, :elaboration, :type_id, 
         :appellation_id, :bottle_500_price, :bottle_750_price, 
         :glass_price, :color, :nose, :mouth, :logo, :age_id, :harvest, 
-        :is_restaurant_wine, :is_special_wine, wine_grapes_attributes:[:_destroy, :id, :wine_id, :grape_type_id, :percentage])
+        :is_restaurant_wine, :is_special_wine, :active, wine_grapes_attributes:[:_destroy, :id, :wine_id, :grape_type_id, :percentage])
     end
 end
