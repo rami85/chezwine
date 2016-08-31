@@ -1,6 +1,19 @@
-<h1>Edición Denominación de origen</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    
+      <% if notice %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button id="notice" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><%= @appellation.name %></strong><%= notice %>
+      </div>
+      <% end %>
 
-<%= render 'form' %>
-
-<%= link_to 'Ver', @appellation %> |
-<%= link_to 'Volver', appellations_path %>
+      <h1><%= @appellation.name %></h1>
+    </div>
+  </div>
+</div>
+<hr/>
+<div class="container final-container">
+	<%= render 'form' %>
+</div>

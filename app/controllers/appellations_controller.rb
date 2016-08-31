@@ -28,7 +28,7 @@ class AppellationsController < ApplicationController
 
     respond_to do |format|
       if @appellation.save
-        format.html { redirect_to @appellation, notice: 'Appellation was successfully created.' }
+        format.html { redirect_to edit_appellation_path(@appellation), notice: ' ha sido creada correctamente!' }
         format.json { render :show, status: :created, location: @appellation }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AppellationsController < ApplicationController
   def update
     respond_to do |format|
       if @appellation.update(appellation_params)
-        format.html { redirect_to @appellation, notice: 'Appellation was successfully updated.' }
+        format.html { redirect_to edit_appellation_path(@appellation), notice: ' ha sido actualizada correctamente!' }
         format.json { render :show, status: :ok, location: @appellation }
       else
         format.html { render :edit }

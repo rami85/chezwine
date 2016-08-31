@@ -1,25 +1,26 @@
-<%= form_for(@type) do |f| %>
+<div class="col-md-8 col-md-offset-2">
+<%= simple_form_for(@type) do |f| %>
   <% if @type.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@type.errors.count, "error") %> prohibited this type from being saved:</h2>
-
       <ul>
-      <% @type.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @type.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label 'Nombre' %><br>
-    <%= f.text_field :name %>
+  <div class="checkbox">
+    <label>
+      <%= f.input :active, label:'Activo' %>
+    </label>
   </div>
-  <div class="field">
-    <%= f.label 'Activo' %><br>
-    <%= f.check_box :active %>
+  <div class="form-group form-group-sm">
+      <label>Nombre</label>
+      <%= f.text_field :name, class: 'form-control'%>
   </div>
   <div class="actions">
     <%= f.submit 'GUARDAR' %>
   </div>
 <% end %>
+<div>

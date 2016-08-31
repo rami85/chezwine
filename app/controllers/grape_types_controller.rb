@@ -28,7 +28,7 @@ class GrapeTypesController < ApplicationController
 
     respond_to do |format|
       if @grape_type.save
-        format.html { redirect_to @grape_type, notice: 'Grape type was successfully created.' }
+        format.html { redirect_to edit_grape_type_path(@grape_type), notice: ' ha sido creado correctamente!' }
         format.json { render :show, status: :created, location: @grape_type }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class GrapeTypesController < ApplicationController
   def update
     respond_to do |format|
       if @grape_type.update(grape_type_params)
-        format.html { redirect_to @grape_type, notice: 'Grape type was successfully updated.' }
+        format.html { redirect_to edit_grape_type_path(@grape_type), notice: ' ha sido actualizado correctamente!' }
         format.json { render :show, status: :ok, location: @grape_type }
       else
         format.html { render :edit }

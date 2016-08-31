@@ -1,6 +1,20 @@
-<h1>Edición tipos de uva</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    
+      <% if notice %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button id="notice" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><%= @grape_type.name %></strong><%= notice %>
+      </div>
+      <% end %>
 
-<%= render 'form' %>
+      <h1><%= @grape_type.name %></h1>
+    </div>
+  </div>
+</div>
+<hr/>
+<div class="container final-container">
+	<%= render 'form' %>
+</div>
 
-<%= link_to 'Ver', @grape_type %> |
-<%= link_to 'Volver', grape_types_path %>

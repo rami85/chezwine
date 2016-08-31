@@ -28,7 +28,7 @@ class AgesController < ApplicationController
 
     respond_to do |format|
       if @age.save
-        format.html { redirect_to @age, notice: 'Age was successfully created.' }
+        format.html { redirect_to edit_age_path(@age), notice: ' ha sido creado correctamente!' }
         format.json { render :show, status: :created, location: @age }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AgesController < ApplicationController
   def update
     respond_to do |format|
       if @age.update(age_params)
-        format.html { redirect_to @age, notice: 'Age was successfully updated.' }
+        format.html { redirect_to edit_age_path(@age), notice: ' ha sido actualizado correctamente!' }
         format.json { render :show, status: :ok, location: @age }
       else
         format.html { render :edit }
