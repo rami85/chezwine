@@ -1,6 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
+    
+      <% if notice %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button id="notice" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><%= @wine.name %></strong><%= notice %>
+      </div>
+      <% end %>
+
       <div class="col-md-3">
       	<img src="<%= @wine.logo %>" class="img-responsive img-thumbnail" style="height:150px;">
       </div>
