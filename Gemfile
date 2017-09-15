@@ -70,5 +70,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'rack-cors', '~> 0.4.0'
-gem 'rack', '1.6.4'
+#gem 'rack', '1.6.4'
 
