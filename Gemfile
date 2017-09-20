@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
 
+gem 'puma'
 ### OpenShift Online changes:
 
 # Fix the conflict with the system 'rake':
