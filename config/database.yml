@@ -1,1 +1,19 @@
-../.openshift/config/database.yml
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  username: <%= ENV['OPENSHIFT_MYSQL_DB_USERNAME'] %>
+  password: <%= ENV['OPENSHIFT_MYSQL_DB_PASSWORD'] %>
+  host: <%= ENV['OPENSHIFT_MYSQL_DB_HOST'] %>
+  port: <%= ENV['OPENSHIFT_MYSQL_DB_PORT'] %>
+
+development:
+  <<: *default
+  database: chezwine
+
+test:
+  <<: *default
+  database: chezwine
+
+production:
+  <<: *default
+  database: chezwine
