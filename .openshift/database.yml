@@ -4,11 +4,10 @@ sqlite: &sqlite
 
 mysql: &mysql
   adapter: mysql2
-  database: "<%=ENV['OPENSHIFT_APP_NAME']%>"
-  username: "<%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>"
-  password: "<%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>"
-  host:     <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
-  port:     <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
+  username: <%= ENV['OPENSHIFT_MYSQL_DB_USERNAME'] %>
+  password: <%= ENV['OPENSHIFT_MYSQL_DB_PASSWORD'] %>
+  host: <%= ENV['OPENSHIFT_MYSQL_DB_HOST'] %>
+  port: <%= ENV['OPENSHIFT_MYSQL_DB_PORT'] %>
 
 postgresql: &postgresql
   adapter: postgresql
@@ -24,13 +23,16 @@ defaults: &defaults
   pool: 5
   timeout: 5000
   encoding: utf8
-  <<: *<%= ENV['RAILS_DB'] || "sqlite" %>
+  <<: *<%= ENV['RAILS_DB'] || "mysql" %>
 
 development:
   <<: *defaults
+  database: chezwine
 
 test: &test
   <<: *defaults
+  database: chezwine
 
 production:
   <<: *defaults
+  database: chezwine
