@@ -23,6 +23,8 @@ postgresql: &postgresql
 defaults: &defaults
   adapter: mysql2
   encoding: utf8
+  pool: 5
+  timeout: 5000
   username: <%= ENV['OPENSHIFT_MYSQL_DB_USERNAME'] %>
   password: <%= ENV['OPENSHIFT_MYSQL_DB_PASSWORD'] %>
   host: <%= ENV['OPENSHIFT_MYSQL_DB_HOST'] %>
